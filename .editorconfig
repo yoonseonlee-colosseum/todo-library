@@ -1,0 +1,42 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+# [encoding-utf8]
+charset = utf-8
+
+# [newline-lf]
+end_of_line = lf
+
+# [newline-eof]
+insert_final_newline = true
+
+[*.{kt,kts}]
+max_line_length = off
+ktlint_standard_no-blank-line-in-list = disabled
+
+[*.bat]
+end_of_line = crlf
+
+[*.java]
+# [indentation-tab]
+indent_style = tab
+
+[*.kt]
+# [indentation-tab]
+indent_style = tab
+
+# [4-spaces-tab]
+indent_size = 4
+tab_width = 4
+
+[*.kts]
+# [indentation-tab]
+indent_style = tab
+
+# [2-spaces-tab]
+indent_size = 4
+tab_width = 4
+
+# [no-trailing-spaces]
+trim_trailing_whitespace = true
