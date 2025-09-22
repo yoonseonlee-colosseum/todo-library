@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 description = "skeleton-library-shared"
 
 plugins {
@@ -8,4 +10,8 @@ plugins {
 
 tasks.withType<Jar> {
 	enabled = true
+}
+
+tasks.withType<BootJar> {
+	enabled = false
 }

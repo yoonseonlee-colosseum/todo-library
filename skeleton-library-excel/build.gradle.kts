@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootJar
+
 description = "skeleton-library-excel"
 
 dependencies {
@@ -7,4 +9,8 @@ dependencies {
 
 tasks.withType<Jar> {
 	enabled = true
+}
+
+tasks.withType<BootJar> {
+	enabled = false
 }
