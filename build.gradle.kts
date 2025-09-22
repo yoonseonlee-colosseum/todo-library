@@ -3,11 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	kotlin("jvm")
-	kotlin("kapt") version "2.1.20"
+	kotlin("kapt")
 	kotlin("plugin.spring") apply false
 	id("org.springframework.boot") apply false
 	id("io.spring.dependency-management") apply false
-	id("org.jlleitschuh.gradle.ktlint") version "13.1.0"
+	id("org.jlleitschuh.gradle.ktlint")
 }
 
 java {
