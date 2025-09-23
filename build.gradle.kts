@@ -8,6 +8,8 @@ plugins {
 	id("org.springframework.boot") apply false
 	id("io.spring.dependency-management") apply false
 	id("org.jlleitschuh.gradle.ktlint")
+	`maven-publish`
+	`java-library`
 }
 
 java {
@@ -23,6 +25,14 @@ allprojects {
 
 	repositories {
 		mavenCentral()
+		maven {
+			name = "GitHubPackages"
+			url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/todo-library")
+			credentials {
+				username = rootProject.findProperty("gpr.user") as String
+				password = rootProject.findProperty("gpr.key") as String
+			}
+		}
 	}
 }
 
@@ -41,6 +51,34 @@ subprojects {
 		testImplementation("org.springframework.boot:spring-boot-starter-test")
 		testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	}
+
+	plugins.withId("maven-publish") {
+		extensions.configure<PublishingExtension>("publishing") {
+			repositories {
+				maven {
+					name = "GitHubPackages"
+					url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/todo-library")
+					credentials {
+						username = rootProject.findProperty("gpr.user") as String
+						password = rootProject.findProperty("gpr.key") as String
+					}
+				}
+			}
+		}
+	}
+
+//	publishing {
+//		repositories {
+//			maven {
+//				name = "GitHubPackages"
+//				url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/todo-library")
+//				credentials {
+//					username = rootProject.findProperty("gpr.user") as String
+//					password = rootProject.findProperty("gpr.key") as String
+//				}
+//			}
+//		}
+//	}
 
 	tasks.withType<KotlinCompile> {
 		compilerOptions {
