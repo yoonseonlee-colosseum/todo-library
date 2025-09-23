@@ -1,0 +1,2 @@
+[libraries]
+poi-ooxml = { group = "org.apache.poi", name = "poi-ooxml", version = "5.4.1" }
