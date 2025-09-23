@@ -3,8 +3,6 @@ import org.springframework.boot.gradle.tasks.bundling.BootJar
 description = "skeleton-library-shared"
 
 plugins {
-	kotlin("jvm")
-	`java-library`
 	`java-test-fixtures`
 }
 
