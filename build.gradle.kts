@@ -67,19 +67,6 @@ subprojects {
 		}
 	}
 
-//	publishing {
-//		repositories {
-//			maven {
-//				name = "GitHubPackages"
-//				url = uri("https://maven.pkg.github.com/yoonseonlee-colosseum/todo-library")
-//				credentials {
-//					username = rootProject.findProperty("gpr.user") as String
-//					password = rootProject.findProperty("gpr.key") as String
-//				}
-//			}
-//		}
-//	}
-
 	tasks.withType<KotlinCompile> {
 		compilerOptions {
 			freeCompilerArgs.set(listOf("-Xjsr305=strict"))
